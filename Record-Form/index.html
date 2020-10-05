@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Record Form</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <h1>記錄表單</h1>
+    <div class="Record_form" >
+      <!-- 日期_時間 -->
+      <p>日期:
+      <input type="date" id="bday"></p>
+      <p>時間:
+      <input type="time" id="usr_time"></p>
+
+
+      <!-- 記錄人員 -->
+      <p>記錄人員:
+      <select id="Person_name">
+          <option value="">請選擇人員</option>
+        　<option value="林舜德">林舜德</option>
+        　<option value="楊宗緯">楊宗緯</option>
+        　<option value="陳銘均">陳銘均</option>
+        　<option value="莊宗恩">莊宗恩</option>
+          <option value="王奕全">王奕全</option>
+          <option value="許雅筑">許雅筑</option>
+      </select></p>
+
+      <!-- 農場_品種代號 -->
+      <form name="Farm_VarietyCode">
+        <p>農場位置: 
+        <select id="Location" onchange="renew(this.selectedIndex);">
+          <option value="">請選擇地點</option>
+        　<option value="屏東">屏東</option>
+        　<option value="六股">六股</option>
+        　<option value="五峰">五峰</option>
+        　<option value="大湖">大湖</option>
+        </select></p>
+
+        <!-- 品種代號 -->
+        <p>品種代號:
+        <select id="Variety">
+          <option value="">請選擇品種</option>
+        </select><br></p>
+      </form>
+
+      <!-- 大小 -->
+      <p>大小:
+      <select id="Choose_size">
+        <option value="">請選擇大小</option>
+      　<option value="母盆">母盆</option>
+      　<option value="走莖苗">走莖苗</option>
+      </select></p>
+
+      <!-- 數量變化 -->
+      <p>數量變化:
+      <!-- <form action="" method="post" name="send" onsubmit="return chk();"> -->
+      <input type="quantity" id="QuantityChange" name="QuantityChange" class="QuantityChange"></p>
+      
+      <button onclick='Submit_data()'>送出資料</button><br>
+      <!-- </form> -->
+
+      <!-- <form action="" method="post" name="send" onsubmit="return chk();">
+        帳號<input type="text" name="account" size="5" />
+        <br />
+        密碼<input type="password" name="pass" size="5" />
+        <br />
+        <input type="submit" value="送出" />
+        </form> -->
+
+      <p></p>
+      <input type="search" class="light-table-filter" data-table="order-table" placeholder="請輸入關鍵字">
+      <p></p>    
+      <table class="order-table">
+        <thead>
+          <tr>
+            <th width="50">編號</th>
+            <th width="100">日期</th>
+            <th width="50">時間</th>
+            <th width="100">記錄人員</th>
+            <th width="100">農場位置</th>
+            <th width="100">品種代號</th>
+            <th width="50">大小</th>
+            <th width="100">數量變化</th>
+            <th width="50">操作</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyid"></tbody>
+      </table>
+        
+      
+    </div>
+
+    <script>
+      const guesses = document.querySelector('.guesses');
+      const guessSubmit = document.querySelector('.dataSubmit');
+      const guessField = document.querySelector('.QuantityChange');
+    </script>
+
+
+    <script src="scripts/main.js"></script>
+
+  </body>
+</html>
