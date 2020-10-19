@@ -6,12 +6,12 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
     <link href="styles/style.css" rel="stylesheet" type="text/css">
 
-    <!--使用jQuery操作dom-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <!--使用JS-XLSX操作xlsx-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.2/xlsx.full.min.js"></script>
-    <!--使用FileSaver下載資料成為檔案-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+        <!--使用jQuery操作dom-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!--使用JS-XLSX操作xlsx-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.2/xlsx.full.min.js"></script>
+        <!-- 使用FileSaver下載資料成為檔案 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
   </head>
 
   <body>
@@ -69,30 +69,6 @@
       
       <p><button onclick='Submit_data()'>送出資料</button></p>
 
-      <!-- <button class="downloadBtn">Download File</button> -->
-      
-
-      <input type="file" id="upload_input">
-
-      <h4>show json</h4>
-      <pre id="upload_showjson"></pre>
-  
-      <h4>show csv</h4>
-      <pre id="upload_showcsv"></pre>
-  
-      <button id="download_button">下載檔案</button>
-
-      <!-- </form> -->
-
-      <!-- <form action="" method="post" name="send" onsubmit="return chk();">
-        帳號<input type="text" name="account" size="5" />
-        <br />
-        密碼<input type="password" name="pass" size="5" />
-        <br />
-        <input type="submit" value="送出" />
-        </form> -->
-
-      <p></p>
       <input type="search" class="light-table-filter" data-table="order-table" placeholder="請輸入關鍵字">
       <p></p>    
       <table class="order-table">
@@ -111,7 +87,20 @@
         </thead>
         <tbody id="tbodyid"></tbody>
       </table>
-        
+
+        <!-- <button class="downloadBtn">Download File</button> -->
+      <P><button id="download_button">下載檔案</button></P>
+
+      <input type="file" id="upload_input">
+
+      <h4>show json</h4>
+      <pre id="upload_showjson"></pre>
+  
+      <h4>show csv</h4>
+      <pre id="upload_showcsv"></pre>
+  
+      
+      
     </div>
 
     <script>
@@ -119,6 +108,7 @@
       const guessSubmit = document.querySelector('.dataSubmit');
       const guessField = document.querySelector('.QuantityChange');
     </script>
+
 
     <script src="scripts/main.js"></script>
 

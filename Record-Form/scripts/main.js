@@ -96,21 +96,25 @@ function Submit_data(){ //送出資料
 }
 
 function Delete_data(obj){	//刪除資料
+	var x=1;
 	var trid=obj.parentNode.parentNode.id;
 	var objtr=document.getElementById(trid);
 	document.getElementById('tbodyid').removeChild(objtr);
-	var deleteRow = objtr.firstChild.innerHTML;
+	var deleteRow = ++objtr.firstChild.innerHTML;
 	var tbody=document.getElementById('tbodyid');
-	var countchildren=tbody.childElementCount;
-	for (var i=deleteRow;i<=countchildren;i++){
-		for(var j=1;j<8;j++){
+	var countchildren=++tbody.childElementCount;
+	for (let i=deleteRow;i<=countchildren;i++){
+		for(let j=1;j<8;j++){
 			tArray[i-1][j] = tArray[i][j];
 		}
 	}
-	for (var i=0;i<countchildren;i++){
-		tbody.children[i].children[0].innerHTML=i+1;
-		for(var j=1;j<8;j++){
-			tbody.children[i].children[j].innerHTML=tArray[i][j];
+	
+	tArray.splice(countchildren, 1);
+
+	for (let i=1;i<=(countchildren-1);i++){
+		tbody.children[i-1].children[0].innerHTML=i;
+		for(let j=1;j<8;j++){
+			tbody.children[i-1].children[j].innerHTML=tArray[i][j];
 		}
 	}
 }
@@ -158,7 +162,7 @@ function Delete_data(obj){	//刪除資料
 	  }
 	});
   
-})(document);
+  })(document);
 
 
 // let downloadBtn = document.querySelector(".downloadBtn");
@@ -191,6 +195,7 @@ function Delete_data(obj){	//刪除資料
 //   }
 //   return data;
 // }
+
 
 $(document).ready(function () {
       
